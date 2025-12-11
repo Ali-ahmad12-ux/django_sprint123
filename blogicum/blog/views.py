@@ -4,7 +4,6 @@ from .models import Post, Category
 
 
 def index(request):
-    # الحصول على 5 آخر منشورات منشورة
     post_list = Post.objects.filter(
         is_published=True,
         category__is_published=True,
@@ -18,7 +17,6 @@ def index(request):
 
 
 def post_detail(request, pk):
-    # الحصول على منشور واحد مع الفحص الشروط
     post = get_object_or_404(
         Post,
         pk=pk,
@@ -34,14 +32,12 @@ def post_detail(request, pk):
 
 
 def category_posts(request, category_slug):
-    # الحصول على الفئة والتأكد من أنها منشورة
     category = get_object_or_404(
         Category,
         slug=category_slug,
         is_published=True
     )
     
-    # الحصول على المنشورات في هذه الفئة
     post_list = Post.objects.filter(
         category=category,
         is_published=True,
