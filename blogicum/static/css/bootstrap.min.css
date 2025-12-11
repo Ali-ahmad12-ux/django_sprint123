@@ -1,0 +1,9 @@
+﻿/* Bootstrap simplified */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+.header { background: #f8f9fa; padding: 20px 0; }
+.nav { display: flex; gap: 20px; }
+.nav a { color: #333; text-decoration: none; }
+.nav a:hover { color: #007bff; }
+.post { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; }
