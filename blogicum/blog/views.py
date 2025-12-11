@@ -9,7 +9,7 @@ def index(request):
         category__is_published=True,
         pub_date__lte=timezone.now()
     ).order_by('-pub_date')[:5]
-    
+
     context = {
         'post_list': post_list,
     }
@@ -24,7 +24,7 @@ def post_detail(request, pk):
         category__is_published=True,
         pub_date__lte=timezone.now()
     )
-    
+
     context = {
         'post': post,
     }
@@ -37,13 +37,13 @@ def category_posts(request, category_slug):
         slug=category_slug,
         is_published=True
     )
-    
+
     post_list = Post.objects.filter(
         category=category,
         is_published=True,
         pub_date__lte=timezone.now()
     ).order_by('-pub_date')
-    
+
     context = {
         'category': category,
         'post_list': post_list,
